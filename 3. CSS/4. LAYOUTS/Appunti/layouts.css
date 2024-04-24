@@ -1,0 +1,38 @@
+/*                           LAYOUT 
+
+Con il tempo, i metodi di gestione del Layout su CSS, si sono evoluti. Ora sono in uso proprietà fondamentali come: 
+DISPLAY, FLOAT e MULTI-COLUMN, GRID e FLEXBOX
+
+                            DISPLAY e FLOAT RULES
+                            
+-DISPLAY: determina se un elemento è di tipo blocco o inline. Gli Inline seguano il flusso del testo, mentre quelli a Blocco occupino 
+ tutta la larghezza disponibile. 
+-FLOAT: permette di "galleggiare" un elemento a sinistra o a destra, facendo sì che il contenuto circostante si avvolga attorno ad esso.
+ Usata maggiormente nel passato per creare Layout complessi con delle limitazioni,  Sostituita oggi con FlexBox. */
+div {
+    display: block, inline, inline-block, none;
+    float: left, right, none;/* rimuove l'elemento sal flusso del documento */
+}
+
+
+                             /* POSITION RULE 
+                             
+Usata per controllare la posizione degli elementi all'interno di una pagina web. Esse sono: 
+-Relative: permette di spostare un elemento dalla sua posizione normale senza influenzare altri elementi. Lo spazio lasvciato dal suo 
+ spopstamento, risulterà ancora occupato
+-Absolute: lo posizionerà rispetto al suo genitore più vicino con un posizionamento non statico.
+-Fixed: ancorerà un elemento rispetto all'intera pagina, la staccherà dal suo contenitore.
+*/
+img {
+    position: fixed; /* l'img sarà ancorata in basso a dx, posizionamento in senzo globale della pag */
+    margin: 5px;
+    bottom: 0px;
+    right: 0px;
+}
+img {
+    position: absolute; /* Da usare con il padre in position static. l'img sarà ancorata in basso a dx, posizionamento in senzo globale della pag */
+    margin: 5px;
+    bottom: 0px;
+    right: 0px;
+}
+

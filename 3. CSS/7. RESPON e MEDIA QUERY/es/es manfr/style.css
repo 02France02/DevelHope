@@ -1,0 +1,21 @@
+/* ! Reset */
+* {
+  font-family: "Intro", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Start Code */
+
+
+header {
+    background-color: rgb(137, 137, 159);
+    & ul {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        
+    }
+}

@@ -1,0 +1,10 @@
+Esercizio da svolgere
+·         Crea un componente FetchProducts che all’apertura della pagina recupera i dati da questo end point https://fakestoreapi.com/products e li salva in uno state products
+·         Crea un componente Product che con tiene un div con un h2 per il title del prodotto un paragrafo per il prezzo
+·         Nel componente FetchProducts fai un map sui dati recuperati col fetch e stampa tanti componenti Product quanti sono i prodotti nello state products.
+·         Passa al componente Product i dati del prodotto corrente del map via props.
+Bonus
+·         Crea
+un bottone "men's clothing" un bottone "jewelery" e un
+bottone "all"
+·         Cliccando un bottone fai comparire in pagina soltanto i prodotti che fanno parte della categoria specificata dal bottone

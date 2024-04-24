@@ -1,0 +1,13 @@
+/* 
+-rem si basa sulla dimensione del carattere dell’elemento HTML, che è l’elemento radice del documento. 
+ Questa dimensione può essere impostata nel CSS o dipendere dalle impostazioni del browser dell’utente. 
+ Ad esempio, se la dimensione del carattere dell’HTML è 16px, 1rem equivale a 16px.
+
+-em si basa sulla dimensione del carattere dell’elemento su cui viene usato, o dell’elemento genitore 
+ più vicino che ha una dimensione del carattere definita. Questa dimensione può variare a seconda della 
+ struttura del documento e dell’ereditarietà. Ad esempio, se la dimensione del carattere di un elemento 
+ è 20px, 1em equivale a 20px.
+
+In generale, si consiglia di usare rem per le dimensioni dei caratteri, in modo da avere un controllo maggiore e una consistenza tra 
+gli elementi. Invece, si consiglia di usare em per le proprietà che dipendono dalla dimensione del carattere, come il padding, il margine,
+la larghezza e l’altezza. */

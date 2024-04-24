@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Lezione HTML</title>
+    <style>
+      label {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Pagina Di Registrazione Sito</h1>
+    </header>
+
+    <main>
+      <div>
+        <label for="email"> EMAIL </label>
+        <input type="email" placeholder="email" />
+      </div>
+
+      <div>
+        <label for="password"> PASSWORD </label>
+        <input type="password" placeholder="password" />
+      </div>
+
+      <div>
+        <label for="nome">NOME </label>
+        <input type="nome" placeholder="nome" />
+      </div>
+
+	  <div>
+        <label for="cognome">COGNOME</label>
+		<input type="cognome" placeholder="cognome">
+	  </div>
+	  
+	  <div>
+		<label for="date">DATA DI NASCITA</label>
+		<input type="date" placeholder="data di nascita">
+	  </div>
+
+	  <div>
+		<label for="tel">TELEFONO</label>
+		<input type="tel" placeholder="tel">
+	  </div>
+
+	  <div>
+		<label for="piano abbonamento">ABBONAMENTO</label>
+		<select name="piano abbonamento">
+			<option value="1">free</option>
+			<option value="2">100</option>
+			<option value="3">200</option>
+		</select>
+	  </div>
+
+	  <div>
+		<label for="aggiungi vantaggi">VANTAGGI PRO</label>
+		<input type="radio" id="option1" name="choice" value="opzione1">
+		si
+		<input type="radio" id="option2" name="choice" value="opzione2">
+		no
+	  </div>
+      
+	  <div>
+		<label for="campi carta di credito">AGGIUNGI CARTA</label>
+		<input type="text" name="card" placeholder="nuber card">
+		<input type="text" name="card" placeholder="cvc">
+		<input type="month" name="card" placeholder="scadenza">
+	  </div>
+	  
+	  <div>
+		<label for="address">ADDRESS</label>
+		<input type="text" placeholder="indirizzo di fatturazione">
+	  </div>
+    </main>
+  </body>
+</html>

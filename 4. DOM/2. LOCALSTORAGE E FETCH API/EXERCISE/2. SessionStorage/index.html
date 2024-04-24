@@ -1,0 +1,93 @@
+<!-- Lo scope di questo task è di salvare tutti i dati di un form nel sessionStorage. 
+    -Fai in modo che nello span venga inserito il testo che si è inserito nell'input nome 
+    -Fai in modo che questi dati si salvino nel sessionStorage 
+    
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: lightblue;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        gap: 16px;
+        margin-bottom: 16px;
+        border: 1px solid black;
+      }
+      .btn {
+        padding: 10px 20px;
+        box-shadow: 0 0 10px 2px gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Il form di <span class="title-name"></span></h1>
+    <div class="form">
+      <label for="email">Email</label>
+      <input type="email" name="email" class="email" placeholder="email" />
+      <label for="firstname">Name</label>
+      <input
+        type="text"
+        name="firstname"
+        class="firstname"
+        placeholder="firstname"
+      />
+      <label for="lastname">Surname</label>
+      <input
+        type="text"
+        name="lastname"
+        class="lastname"
+        placeholder="lastname"
+      />
+    </div>
+    <button class="btn">Salva</button>
+    <p class="printedform"></p>
+    <script>
+      //prendiamo il bottone
+      const submitButton = document.querySelector(".btn");
+
+      //1. creiamo una Func che ci imposta il valore nello span
+      function setName(inputValue) {
+        //recuperiamo lo span
+        const inputName = document.querySelector(".title-name");
+        //Usiamo innertext o textcontent per assegnare il valore allo span
+        inputName.innerText = inputValue;
+
+        //FASE SCRITTURA: impostiamo key e nome su cui stiamo operando
+        sessionStorage.setItem("title-name", inputValue);
+      }
+
+      //2. imposto un evento al click del bottone
+      submitButton.addEventListener("click", () => {
+        //Prendo il valore dell'input del nome
+        const input = document.querySelector(".firstname").value;
+
+        //Chiamo la Func setName
+        setName(input);
+      });
+
+      //3. FASE DI LETTURA: ritorna il val del sessionStorage che abbia come chiave il valore passato a SetItem
+      const savedFirstname = sessionStorage.getItem("title-name");
+
+      //Verifichiamo se il GETITEM esiste, in tal caso al REFRASH della PAG, il nome apparirà ancora
+      if (savedFirstname) {
+        //chiamo la funzione e passo come argomento l'username recuperato
+        setName(savedFirstname);
+      }
+
+    </script>
+  </body>
+</html>

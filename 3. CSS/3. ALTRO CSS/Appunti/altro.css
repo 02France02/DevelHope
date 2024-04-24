@@ -1,0 +1,58 @@
+                    /* CSS UNITA' DI MISURA
+ 
+-PIXEL(px): determina la dimensione nei relativi pixel, width="300px"vmin, vma
+-PERCENTUALE(%): si riferisce sempre al suo elemento genitore, width="60%
+-VIEWPORT WIDTH(vw): fa riferimento alla dimenzione alla finestra renderizzata al momento, per larghezza 1-100vw.
+-VIEWPORT HEIGHT(vh):  fa riferimento alla dimenzione alla finestra renderizzata al momento, per altezza 1-100vh. 
+-VMIN: consentono di valutare la dimensione minima tra VW e VH, 
+-VMAX: consentono di valutare la dimensione massima tra VW e VH 
+-EM:corrisponde alla dimensione del carattere di un elemento, del carattere del suo elemento genitore. 
+-REM: 1rem è sempre uguale alla dimensione del carattere di base (root) del documento.*/
+div {
+    font-size: 16px;
+    width: 50%;
+    font-size: 2vw;
+    font-size: 3vh;
+    width: 10vmin;
+    height: 20vmax;
+    margin: 1em;
+    padding: 1rem;
+}
+
+                    /*  CSS FUNCTIONS e CSS CUSTOM PROPERTIES
+                    
+CSS FUNCTIONS:
+            ♦CALC(50% + 100px): accetta un’espressione come parametro, e il risultato di questa espressione viene 
+             utilizzato come valore per una proprietà CSS.
+            ♦*/
+
+/* Imposta l’altezza di un elemento a 100vh meno 80px: */            
+.main-content {
+    height: calc(100vh - 80px);
+}
+
+
+/*
+-CUSTOM PROPERTIES:
+SONO Variabili  all'interno del css, che possono esser passate a più Rules,  per rendere riutilizzabili dei valori.*/
+:root {
+    --main-Color: blue;
+}
+/* Selettore sulla quale applicarla */
+div {
+    background-color: var(--main-Color, yellow);/* se main non è disponibile,  usare yellow */
+    cursor: pointer;/* al passar della freccia su div,  essa diventa una MANINA, usata nei link*/
+    cursor: auto;/* Il browser sceglie il cursore appropriato in base al contesto. usata nei link*/
+    cursor: help;/* imposta il cursore come un punto interrogativo (usato per fornire aiuto).*/
+    box-shadow: 10px 10px 10px  gray;/* crea ombre per i box, v1: dist vert, v2: dist oriz, v3: diffusione ombra */
+    background: url(image.png);/* immagine come background */
+    background-position: center center; /* centrare un img */
+    background-size: contain;/* contiene l'immagine di sfondo nel box */
+    background-repeat: no-repeat;
+
+}
+img {
+    filter: blur(4px);/* sfoca le img in base ai px */
+    opacity: .2;/* opacità sulle img */
+    transform: rotate(30deg); /* ruota la posizione dell'img di 30° */
+}

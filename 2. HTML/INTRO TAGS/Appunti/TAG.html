@@ -1,0 +1,191 @@
+<!-- HTML è un linguaggio di MarkUp, non contiene logica e definisce il contesto della pagina. -->
+<!-- Esso è composto da elementi, che strutturano la pg web e ne definiscono il contenuto. 
+ES. di ELEMENTO:-->
+<p>ciao, questo è un paragrafo</p>  
+<!--ES di CONTENUTO  -->
+ciao, questo è un paragrafo
+<!--ES di TAG  -->
+<p></p>
+<!--                        ATTRIBUTI: 
+    sono caratteristiche che descrivono al meglio il comportamento di un HTML ELEMENTS 
+ES. ATTRIBITI: 
+sono in questo caso, scr(qual'è l'immagine in uso), alt. 
+Esistono tag senza chiusura, autoconclusivi che non consentono di ospitare contenuti-->
+<img src="assets/img1.png" alt="immagine 1" />
+<!-- 
+DESCRIZIONE ATTRIBUTI:
+-Si indica con una KEY, che sarà uguale ad un valore dentro gli "apici";
+--><img src="assets/img1.png" /> <!-- 
+-Possono essere Booleani, tipo REQUIRED, DISABLE, DEHIDDEN ecc., come unico valore che può accogliere è se stesso --> 
+<img src="assets/img1.png" required /><!-- 
+-Possono raggruppare tra di loro i vari TAG, usando le classi o, per identificare gli attributi univoci tramite ID -->
+
+<!--                              TAG HEAD:
+-Esso conterrà METADATI ed altri tipi di tag-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nome dell'autore">
+    <meta name="description" content="Breve descrizione della pagina">
+    <!-- OPEN-GRAPH META-DATA -->   
+    <meta proprerty="og:image" content="https://exsample.com/img">
+    <meta proprerty="og:description" content="Questa pag contiene un esempio di scrittura del web">
+    <meta proprerty="og:title" content="Lezione HTML">
+    <title>Titolo in alto della pag</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" >
+</head>
+<!-- TAG META:
+Descrive al Browser come comportarsi a seconda del METADATA indicato. 
+-META CHARSET: consente di indicare al browser la codifica di caratteri di quella pag. "UTF-8", quasi tutti i caratteri presenti nel mondo
+-META NAME AUTHOR: nome dell'autore della pag
+-META DESCRIPTION: descrizione della pag
+-META VIEWPORT: indicano al browser il comportamento in base al dispositivo
+-META TAG: rendono compatibile ulteriori Browser particolari
+-OPEN-GRAPH META-DATA: sono dei dati che consentono, per es. a Facebook(inventore), di proporre un'anteprima della pag ottimizzata
+-TAG LINK: indicano qual'è la FAVICON della PAG. La FAVICON è una piccola icona che apparirà accanto al titolo nella TAB BAR. 
+         ♦Vengono usati anche per la visualizzazione dell'icona personalizzata sui vari dispositivi 
+         ♦Vengono usati anche per il file CSS da inserire nell'HTML-->
+
+
+ 
+<!--                         ANATOMIA DI UNA PAGINA - H1/P/UL/OL -->
+
+<!--TAG GESTIONE TESTO:  
+-TAG TITOLI: max h6-->
+<h1>Titolo Più Grande</h1>
+<h6>Titolo Più Piccolo</h6><!--
+
+-TAG PARAGRAFO: se presente + di 1, passa ad un nuovo Paragrafo-->
+<p>Paragrafo</p><!--
+
+-TAG LISTE: 
+    ♦ORDINATA: si usa con LI, ovvero list item per mettere in elenco più elementi, avremo poi un elenco numerato-->
+<ol>
+    <li>Item 1</li>
+    <li>Item 2</li>    
+</ol><!-- 
+    ♦NON ORDINATA: anche essa con LI, avremo un elenco puntato-->
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul><!-- 
+    ♦Possiamo anche nidificare le liste, anche combinando OL e UL-->
+<ul>
+    <li>Item 1</li>
+      <li>
+          <ul>SubItem 1</ul>
+      </li>
+</ul><!-- 
+
+-TAG CONTENITORI: sono scatole vuote INDIPENDENTI, contenenti elementi. Essi saranno blocchi della pag. 
+                ♦Il <div> Esso è di tipo Content Block. Al susseguirsi di Blocchi, essi andranno a capo -->
+<div>
+    <h1>Title</h1>
+    <p>Text</p>
+</div><!--     
+                ♦Lo <span> Esso è di tipo INLINE, progettati per contenere contenuti più piccoli 
+                — come poche parole o una frase — all'interno di un blocco di contenuto più grande.-->
+<div>
+    <h2>Buy our stuff!</h2>
+    <p>Some of our <span>products</span> include</p>   <!-- Possiamo inserire lo Span a delle parone nel paragrafo per cambiare caratteristiche --> 
+    <span> <p>SuperWidgets</p> </span>                 <!-- Entrambi gli span saranno affiancati -->
+    <span> <p>MegaWidgets</p> </span>
+</div>                                             <!-- I TAG BLOCK-LEVEL possono contenere gli INLINE-LEVEL, ma non il contrario
+
+-TAG DI INTERRUZIONE: < br /> elemento, tutto ciò che segue inizia dalla riga successiva.-->
+<p>Lorem ipsum, dolor sit amet consectetur <br />
+   adipisicing elit. Nam fuga provident vel <br />
+   pariatur </p><!--
+
+-TAG HORIZZONTAL LINE: <hr> tag crea una riga dalla posizione corrente nel documento al margine destro, seziona visivamente il documento-->
+<body>
+    <p>This is paragraph one and should be on top</p>
+    <hr />
+    <p>This is paragraph two and should be at bottom</p>
+ </body><!--
+
+-TAG TESTO PREFORMATTATO: <pre> utilizzato per definire testo preformattato che preserva gli spazi, le interruzioni di linea-->
+<body>
+    <pre>
+        Questo è un esempio di testo preformattato.
+        Viene visualizzato con spazi e interruzioni di linea esattamente come scritto qui.
+        Puoi formattarlo come preferisci!
+    </pre>
+</body><!-- 
+
+-TAG CITAZIONE: <blockquote> è utilizzato per definire una sezione di testo citato da un’altra fonte.-->
+<body>
+    <p>citazione dal sito web del WWF:</p>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        Per 50 anni, il WWF ha protetto il futuro della natura. 
+    </blockquote>
+</body><!--               
+                       
+                           GLI HIPER-LINKS  
+
+Essi consentono di indicare dei riferimenti su cui andare a navigare
+
+-SINTASSI: <a href="other.html" title="Title">Text for link</a>    TITLE: una descrizione aggiuntiva da dare  -->
+<a href="https://www.fb.com" title="Title">Text to complete</a><!-- 
+
+-LINK a un html presente nella stessa cartella-->
+<a href="NOME FILE.html"></a><!-- 
+
+-LINK a un html presente in un'altra cartella-->
+<a href="NOME.folder/FILE.html"></a><!-- 
+
+-POSSIAMO aggiungere anche un FRAG-MENT, con un #, che ci manderà in una porzione specifica della pag-->
+<a href="NOME FILE.html#SPECIFIC"></a><!--
+
+-PER SCAVALCARE LE PAG, es. Ritornare all'indice, si usano i 2 puntini-->
+<a href="../Index.html">riportami alla pag iniziale</a>
+
+<!--                            TABELLE:               
+-La tab non nasce per esser responsive,  ma per adattarsi al suo contenuto
+-La sua struttura va rispettata.        
+SINTASSI:  <table>(struttura), <caption>(titolo), <tr>(riga), <th>(colonna), <td>(dati)  
+-ATTRIBUTI TABLE: 
+                ♦COLSPAN="": unisce le colonne sul riogo, a seconda del numero inserito
+                ♦ROLSPAN="": fa lo stesso lavoro, ma in termini di righe
+                ♦COLGROUP="": <col>utilizzato per specificare un gruppo di una o più colonne all’interno di una tabella. 
+
+-SEMANTICITA' NELLE TABELLE: <thead>:la parte iniziale, primo rigo di ritolo sezione. <tbody>:lo svolgimento della tabella.
+<tfoot>:la parte finale, se sta. Anche se il <tfoot> venisse ragruppato sopra al body, esso apparirà comunque sotto           -->
+<body>
+    <table>
+        <caption>Title of Table</caption>
+        <colgroup>
+            <col style="background-color: yellow">
+            <col>
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>TITLE 1</th>
+                <th>TITLE 2</th>
+                <th>TITLE 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1 Description TITLE 1</th>
+                <th>1 Description TITLE 2</th>
+                <th>1 Description TITLE 3</th>
+            </tr>
+            <tr>
+                <th>2 Description TITLE 1</th>
+                <th>2 Description TITLE 2</th>
+                <th>2 Description TITLE 3</th>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Conclusion TITLE 1 + 2</th>
+                <th>Conclusion TITLE 3</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>

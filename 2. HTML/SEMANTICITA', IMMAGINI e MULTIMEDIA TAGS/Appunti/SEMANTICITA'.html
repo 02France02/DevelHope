@@ -1,0 +1,229 @@
+<!--                                  UN APPROCCIO SEMANTICO
+
+I tag <DIV> e <SPAN>, sono dei contenitori generici. Per questo, in HTML 5, sono stati introdotti dei TAG SEMANTICi, ovvero
+facilmente interpretabili in base al contenuto. Essi sono:-->
+<nav></nav><!-- conterrà un menù di navigazione con dei link per il nostro sito -->
+<header></header><!-- indica l'intestazione della pag: il titolo. Può esser messo all'interno di altri contenitori, eseguendo la stessa funzione -->
+<main></main><!-- tag principale della pag, nella quale all'interno saranno contenuti ulteriori contenitori e tag -->
+<article></article><!-- utilizzato per specificare contenuto indipendente e autocontenuto all’interno di un documento. (post, notizie, articoli blog...)  -->
+<section></section><!-- esso è un elemento di ragruppamento di ulteriori elementi della pag-->
+<footer></footer><!-- indica la fine della pag, tipo il copyright -->
+<aside></aside><!-- contiene qualcosa che non ha uno stretto legame con il resto della pag, tipo una barra laterale. -->
+
+<!-- USO DEI TAG SEMANTICI: -->
+<body>
+  <nav>
+    <link rel="stylesheet" href="file.html" />
+  </nav>
+
+  <header>
+    <h1>TITOLO PAG</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Paragrafo pag</h2>
+      <article>
+        <p>Articolo di paragrafo</p>
+      </article>
+    </section>
+
+    <aside>
+        <p>info author</p>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>copyright</p>
+    <p>numb tel</p>
+  </footer>
+
+</body>
+
+
+                    <!-- LE IMMAGINI
+                    
+Possiamo posizionare le IMMAGINI nella nostra pag web,  con il tag IMG.
+SINTASSI:  -->
+<img 
+    width="larghezza in px"
+    height="altezza in px"
+    src="FOLDER.file.png" 
+    alt="immagine con una descrizione. Servirà per esser identificata da internet">
+
+<!-- 
+CON SEMANTICA: -->
+<figure>
+    <img 
+    width="larghezza in px"
+    height="altezza in px"
+    src="FOLDER.file.png" 
+    alt="immagine con una descrizione. Servirà per esser identificata da internet">
+    <p>Descrizione IMG, parte visivile</p>
+    <figcaption>Descrizione IMG, parte visivile. Parte semantica</figcaption>
+</figure>
+
+                     <!-- RESPONSIVITA' IMMAGINI -->
+<!-- 
+-SRCSET="": avremo la possibilità di indicare più file selezionabili a seconda della dimensione dell'immagine stessa 
+-SIZES: indica la dimensione opportuna renderizzata se il display ha una dimensione max indicata, a scalare fino a quella 
+che più si avvicina-->
+<img 
+    srcset="
+        immagine.png 200w,
+        2immagine.png 530w,
+        3immagine.png 800w"
+
+
+    sizes="
+    (max-width: 320px) 180px,
+    (max-width: 720px) 400px,
+    800px"
+
+    src="FOLDER.file.png" 
+    alt="immagine con una descrizione. Servirà per esser identificata da internet">
+    
+
+
+       <!-- TAG CON ATTRIBUTI DI RISOLUZIONE 
+
+-DENSITA' DISPLAY: verrà indicato con un val numerico, che avrà una x (2x, densità doppia) -->
+<img 
+    src="immagine.jpg"
+    srcset="immagine.jpg 2x" 
+    alt="immagine con una descrizione. Servirà per esser identificata da internet">
+
+
+
+<!--           CONTROLLO DEL DESIGN
+
+-IMMAGINE DIVERSA A SECONDA DEL DISPLAY IN USO: <picture>, indica delle SOURCE, con immagini diverse, più piccole.
+Esso identifica delle IMG utili al nostro design e che hanno un approccio differente a seconda del design in cui si trova -->
+<picture>
+    <source media="(max-width: 720px)"  srcset="immagine.png"> 
+    <source media="(max-width: 800px)" srcset="2immagine.png">  
+    <img src="immagine.png" alt="Descrizione dell'immagine">
+</picture>
+
+
+<!--                  VIDEO E AUDIO 
+
+-POSSIBILITA' di RIPRODUZIONE AUDIO e VIDEO:-->
+<body>
+    <video src="www.ilvideotondo.com/videos">
+        <p>Messaggio di errore nel caso in cui non fosse disponibile il video. ALTERNATIVA <a href="www.exsample.com"></a></p>
+    </video>
+
+    <video 
+        controls
+        poster="immagine di anteprima.jpg"
+        src="www.ilvideotondo.com/videos">
+        <p>Messaggio di errore nel caso in cui non fosse disponibile il video. ALTERNATIVA <a href="www.exsample.com"></a></p>
+
+    </video>
+
+    <!-- Non tutti i Browser possono supportarli, perciò è bene avere delle fonti differenti.
+    -LOOP: video sempre in riproduzione
+    -AUTOPLAY: alla visualizzazione, si autoavvia
+    -MUTED: all'autoavvio si muta-->
+    <video controls width="300px" height="400px" autoplay loop muted>
+
+        <source href="www.exsample.com/video.mp4" type="video/mp4">
+        <source href="www.exsample.com/video.wave" type="video/wave">
+
+        <p>Messaggio di errore nel caso in cui non fosse disponibile il video. ALTERNATIVA <a href="www.exsample.com"></a></p>
+
+    </video>
+
+    <!--Audio e tools -->
+    <audio controls>
+        <source href="www.exsample.com/audio.mp3" type="audio/mp3">
+        <source href="www.exsample.com/audio.aac" type="audio/aac">
+
+        <p>Messaggio di errore nel caso in cui non fosse disponibile l'audio. ALTERNATIVA <a href="www.exsample.com"></a></p>
+
+    </audio>
+</body>
+
+
+<!--                    CENNI AD SVG    
+
+-UTILIZZO DI IMMAGINI A SVG: Sono delle immagini algoritmiche che vengono gestite con dei calcoli algoritmici, che consentono di 
+ gestire in maniera dinamica e mai errata le dimensioni della nostra immagine.
+  ♦Nel caso di RIDIMENSIONAMENDO, possiamo scalare in riduzione ed in ingrandimento, senza perdita di qualità.
+
+-IMMAGINI RASTER: sono una serie di punti colorati che messi uno di seguito all'altro che definiscono la sua colorazione. 
+  ♦Nel caso di RIDIMENSIONAMENDO, essa più sarà INGRANDITA e più tenderà a SGRANARE. -->
+
+<!--ESEMPIO DI IMMAGINI SVG -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Lezione HTML</title>
+</head>
+<body>
+    <!-- SVG con img tag, Un cerchio con un bordo rosso. -->
+    <img src="circle.svg" alt="cerchio con un bel bordo rosso!" height="87" width="100">
+
+    <!-- SVG con img tag e fallback, Un cerchio con un bordo rosso. -->
+    <img src="circle.png" alt="cerchio con un bel bordo rosso!" srcset="circle.svg">
+
+    <!-- SVG tags, Un cerchio SVG disegnato direttamente nel codice.-->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+        <circle cx="400" cy="300" r="250" stroke-width="20" stroke="#f00" fill="#ff0"/>
+    </svg>
+</body>
+</html>
+
+
+<!--                BUONE PRATICHE PER HTML
+
+-INIZIAMO UN DOCUMENTO HTML con:-->
+<!DOCTYPE html>          <!-- Indica HTML più recente, il 5 -->
+<html lang="it">         <!-- Lingua della pag, se un contenuto ha una lingua differente, indicarlo nel contenuto stesso-->
+
+<!-- Meglio usare il - che il CamelCase, i tag sempre in piccolo -->
+    <head>
+        <meta>
+        <meta>
+        <title>TITOLO SCHEDA</title>
+    </head>              <!-- Descrivere al meglio tutti i comportamenti che dovrà avere la nostra pag -->
+
+    <body>
+        <a href="other.link" href="file.html">Pagina </a>
+        
+        <img srcset="
+                immagine.png 200w
+                immagine.png 530w
+        " sizes="
+                (max-width: 720px) 180px
+                (max-width: 320px) 400px 
+                " src="immagine princip.jpg
+                " alt="descrizione">
+                 
+
+        <video controls
+            poster="immagine di anteprima.jpg"
+            src="www.ilvideotondo.com/videos">
+        <p lang="en">Messaggio di errore nel caso in cui non fosse disponibile il video. ALTERNATIVA <a href="www.exsample.com"></a></p>
+        </video>
+          
+    </body>
+
+</html>
+
+<!-- RICORDA LA SEMANTICITA': -->
+<header></header>
+<section>
+    <article>
+        <figure>
+            <img src="" alt="">
+            <figcaption></figcaption>
+        </figure>
+    </article>
+</section>
+<footer></footer>

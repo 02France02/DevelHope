@@ -1,0 +1,41 @@
+.box-container {
+    display: flex;
+    justify-content: center; 
+    justify-content: space-around; /* stesso spazio da dx e sx */
+    justify-content: space-between; /* max spazio tra i blocchi */
+    justify-content: flex-end; /* tutti alla fine del contenitore o all'ìinizio con flex-start */
+    justify-content: space-evenly; /* centra lasciando lo stesso spazio separati */
+
+    /* centrare in verticale */
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px /* spazio tra lato e lato di blocchi */
+}
+
+item {
+    /* decido la direzione */
+    flex-direction: column
+}
+    
+
+
+.box {
+    width: 200px;
+    height: 200px;
+}
+.red {
+    background: red;
+    flex-grow: 1; /* tutto lo spazio a disposizione in orizzontale,  lasciando il restante spazio agli altri */
+}
+.green {
+ background: green;
+ flex-wrap: wrap ; /* se ci sono tropi elementi sulla stessa riga, quelli in più vanno a capo */
+}
+.yellow {
+ background: yellow;
+ flex-basis: 200px;/* larghezza base 200px, ma si adattano cmq al contenuto, responsive */
+}
+.blue {
+    background: blue;
+}

@@ -1,0 +1,104 @@
+/* ! Reset */
+body,
+html {
+  font-family: "Intro", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style-type: none;
+}
+img {
+  height: auto;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.8rem;
+}
+h6 {
+  font-size: 0.6rem;
+}
+a {
+  text-decoration: none;
+}
+
+/* Start Code */
+.cont-1 {
+    width: 400px;
+    height: 400px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-2 {
+    width: 400px;
+    height: 400px;
+    
+    display: flex;
+    
+    align-items:end;
+    
+}
+
+section {
+
+    width: 100vw;
+    background-image: url(Image20240223104529.jpg);
+    background-size: cover;
+    display: flex;
+    /* il flusso deve esser in rigo e , se schiacciato,  va a capo con Wrap */
+    flex-flow: row wrap ;
+    gap: 50px;
+    justify-content: center;
+    padding: 40px;
+}
+
+.cont-2 img {
+    width: 200px;
+}
+
+
+button {
+    background: none;
+    border: none;
+}
+
+
+/* Sotto i 400px, i div si schiacciano, usiamo i @Media */
+@media screen and (max-width: 400px) {
+    
+}
+

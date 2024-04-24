@@ -1,0 +1,71 @@
+                          /* FLEXBOX
+                          
+Flexbox affronta e risolve molte sfide legate all'ordinamento e alla gestione dei contenuti all'interno dei box.
+La section è il container, gli article sono gli elementi dentro.
+
+-CARATTERISTICA: è la capacità di ordinare i box in maniera monodimensionale, ovvero lungo una singola linea, 
+                 sia essa orizzontale (per riga) o verticale (per colonna).                                  
+-FLEX CONTAINER: permette di posizionare e allineare gli elementi all'interno di un container in modo flessibile 
+                 e responsivo. 
+                 ♦FLEX-DIRECTION: per determinare l'orientamento degli elementi 
+                 ♦FLEX-WRAP: permetta di gestire il flusso degli elementi quando superano le dimensioni del container
+                 ♦FLEX-BASIS: determina la dimensione base di un elemento prima che lo spazio rimanente venga distribuito.
+                 ♦FLEX-GROW: indica come distribuire lo spazio in eccesso tra gli elementi. 
+                 ♦FLEX-SHRINK: gestisce la riduzione degli elementi quando lo spazio è limitato.
+                 ♦FLEX-FLOW: determina il flusso del contenuto. ES: In colonna, In rigo, Invertiti...
+                 ♦JUSTIFY-CONTENT: serve a disporre il contenuto in orizzontale
+                 ♦ALIGN-ITEMS: serve a disporre il contenuto in verticale*/
+
+.containers {
+    display: flex; /* Solo con questo, Tutti i container chiamati, andranno direttamente in linea */
+    flex-direction: column;/* I container vanno in colonna */
+    flex-direction: row;/* I container vanno in riga */
+    flex-direction: row-reverse;/* I container vanno in riga al contrario */
+}
+
+/* Con tanti Article all'interno della Section, Flex andrà a creare una Barra di Scorrimento orizzontale.
+   Per cui, per Responsive si usa Flex-Wrap */
+.containers {
+    display: flex; /* Solo con questo, Tutti i container chiamati, andranno direttamente in linea */
+    flex-wrap: wrap;/* ridispone i contenuti nella pg, così che venga spezzato il flusso per non trasbordare*/
+}
+
+.containers {
+    flex-grow: 1;/* dristribuisce lo spazio in eccesso ai box*/
+    flex-basis: 200px;/* Dimensione minima occupabile, assegne una dimen flessibile*/
+    /* SHORT di Grow e Wrap */
+    flex: 1 200px;
+    order: 1; /* indica il primo box renderizzato */
+}
+
+/* Diamo il flex al contenuto diretto agli elementi, essi si disporrano di base in riga */
+.container {
+    display: flex;
+    flex-flow: row-reverse;/* Esso invertirà il 1° elem con l'ultimo nel rigo */
+    flex-flow: column;/* in colonna, uno sotto l'altro */
+    flex-flow: column-reverse;/* In colonna,  ma a partire da sotto */
+}
+
+/* Allineamento contenuto VERTICALMENTE: */
+.container {
+    display: flex;
+    align-items: center;/* centra il posizionamento tramite l'asse VERTICALE */
+    align-items: flex-start;/* Allinea dal bordo SX del contenitore */
+    align-items: flex-end;/* Allinea dal bordo DX del contenitore */
+    align-items: baseline;/* Allinea alla linea di base del testo, non ci saranno squilibri  */
+    
+}
+
+/* Allineare un singolo elemento, all'interno di un container flex */
+main > p {
+    align-self: flex-start;/* il titolo resterà nella sua posizione ed il p in quiesto caso,  andrà all'inizio */
+}
+
+
+/* Disposizione contenuto ORIZZONTALMENTE: */
+.container elements {
+    display: flex;
+    justify-content: space-around;/* dispone i contenuti con una spaziatura uniforme,  con un margine a sx e dx */
+    justify-content: space-between;/* dispone i contenuti a sx e dx, con spazio al centro uniforme */
+    justify-content: center;/* dispone i contenuti al centro */
+}

@@ -1,0 +1,100 @@
+                                    /* CSS */
+
+/* Sono un insieme di regole che permettono di stilizzare la Pag HTML. Le regole sono applicabili ai
+singoli o più elementi.
+
+CSS si andrà a collegare con HTML nell' <head>, con il <link href="pag.css rel="stylesheet" type="text/css">.
+-HREF="": collega il link di CSS
+-REL="":  riferimento per il browser
+-TYPE="": aiuterà il browser su come gestire quell'elemento,  con migliori modalità.
+
+Possiamo anche usarlo direttamente nell'HTML con l'attributo <style></style> o in maniera in-line nel <tag style="color: blue;">
+
+SINTASSI: 
+-TAG: si può usare ogni tag in HTML per chiamare il CSS, solo che esso andrà su tutti loro;
+-CLASSE: si associa una classe ai <tag class="pippo"> per richiamare in gruppo tag multipli nel CSS
+-ID: esso è unico, andrà associato singolarmente ai <tag id="pluto">, ed agirà solo su quel singolo elemento
+-INPUT[type="email"]: identifica degli elementi attraverso i loro attributi
+-SPAN:HOVER = sono Pseudo-Selettori, a seconda dello stato dell'elemento sulla quale vengono applicati, danno una regola*/
+
+/* selettore */tag {
+                color/* proprietà */: red/* valore */; 
+                /*          dichiarazione             */
+                }
+.class {
+    color: white;
+}
+
+#id {
+    color: grey;
+}
+input[type="email"] { /* "Cambia il bordo in 4px, a tutte le caselle di tipo email" */
+    border: 4px solid green;
+}
+span:hover {
+    font-weight: bold; /* "Se passiamo la freccia su quel tag, la scritta diverrà in grassetto" */
+}
+
+                       /* 3 FONDAMENTAL RULES: CASCATA, SPECIFICITA' E EREDITARIETA'   
+                       
+Questi principi determinano come i browser interpretano e applicano le regole CSS quando più regole sono potenzialmente applicabili
+ allo stesso elemento.
+
+-CASCATA: quando il Browser incontra più regole con lo stesso selettore, applicherà l'ultima regola trovata,  comportandone la 
+SOVRASCRITTURA di stili precedenti. Solo pe proprietà co coincidono in entrambe le regole vengono sovrascritte.
+♦ESEMPIO:*/
+p {
+    color: red;
+    font-style: italic; /* Il font,  rimarrà */
+}
+p {
+    color: rgb(6, 1, 1); /* Essa verrà applicata! */
+} 
+
+                         /* EREDITARIETA'  
+            
+Alcune proprietà, come i colori o gli stili dei caratteri, vengono spesso ereditati dai genitori ai figli, mentre altre, come le 
+dimensioni, potrebbero non esserlo. Questo comportamento può esser anche variato.
+
+-INITIAL: reimposta una proprietà al suo valore predefinito
+-INHERIT: che forza un elemento a ereditare una proprietà dal suo genitore
+-UNSET: è utile per ripristinare una proprietà al suo stato naturale o iniziale, a seconda del contesto.
+       ♦Ad esempio, se il testo all’interno di un elemento ha un colore specifico, applicando color: unset; 
+       a un elemento figlio farà sì che il testo erediti il colore dal suo genitore*/
+tag {
+    color: initial;
+}
+/* Al passaggio nel mouse sulla frase, il colore sarà ereditato */
+tag:hover {
+    color: inherit;
+}
+tag:hover { 
+    color: unset;
+}
+
+                 /* COMBINAZIONE SELETTORI 
+                 
+E' possibile agganciare più selettori tra di loro. Ad es, tag p {}*/
+div p {
+    color: blue;
+}
+/* In questo caso tutti i tag p del div genitore, abranno il colore blue */
+
+
+                   /* SPECIFICITA'
+                   
+Determina quale regola di stile prevale quando ci sono conflitti. Si calcola combinando tre numeri:
+attributi style, ID, altre classi e pseudo-selettori, e nomi di elementi. 
+Il valore più a sinistra ha la precedenza, garantendo che le regole più specifiche abbiano il controllo  
+-ID: assegneranno i valori a sinistra(1.0.0)
+-TAG, ELEMENTI, E PSEUDO-ELEMENTI : i valori a destra(0.0.1)
+-CLASSE, PSEUDO CLASSE e ATTRIBUTO: valori centrali(0.1.0)*/
+
+/* SCALA D'IMPORTANZA: !Important > InLine > ID > Class > Selettore;
+-!IMPORTANT: esso andra affiancato ad una proprietà, ed prevarrà sulle altre regole. */
+button {
+    color: red !important;
+}
+
+
+

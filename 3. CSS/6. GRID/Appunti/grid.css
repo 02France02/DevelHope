@@ -1,0 +1,119 @@
+                     /* GRID 
+                     
+-Grid permette di disporre gli elementi di una pagina all'interno di una griglia, 
+ offrendo un controllo multidimensionale sia sull'asse orizzontale che verticale.
+
+DIFFERENZA CON FLEXBOX:
+-Flexbox, è monodimensionale, mentre Grid è  particolarmente adatto per creare la 
+ struttura portante delle pagine.*/
+
+/* TERMINOLOGIE:
+-GRID CONTAINER: contenitore delle griglie
+-GRID TRACKS: spazi occupati dai singoli blocchi.
+-GRID LINE: linee che separano i vari blocchi della griglia
+-FR: unità di misura che indica le frazioni  */
+
+.container {
+    display: grid;/* Attivazione, definiamo delle regole o facciamo si che grid le definisca direttamente impostandole sui figli*/
+    /* DEFINIAMO LE COLONNE: in questo caso 2 */
+    /* In ordine di apparizione, 1°div alla 1°colonna e 2°div alla 2°colonna; 2°div alla  1°col e 3°div alla 2°col; */
+    grid-template-columns: 1fr 1fr;/* Indica a grid quali siano le colonne e come disporre gli elementi al suo interno */
+    grid-template-columns: 1fr auto ;/* AUTO: gestisce lo spazio in modo automatico più opportuno */
+
+}
+
+header {
+    grid-column: 1; /* Inserito nella prima Grid Line disponibile */
+    /*⬇️ Modi di scrivere uguali */
+    grid-column: 1 / 3; /* Dalla 1°Grid Line alla 3° */
+    grid-column: 1 / -1;/* Dalla 1°Grid Line SX all'estrema DX */
+    grid-column: 1 / span 2;/* Dalla 1°Grid Line a + spazio di 2 */
+    /*⬆️ Modi di scrivere uguali */
+    grid-row: 1;
+    text-align: center;
+}
+
+                        /* USO CON LABEL
+
+So possono assegnare etichette (label) alle linee della griglia, permettendo una gestione più intuitiva degli spazi
+-[col-start, col-two, body-line...]: sono label da indicare accanto i FR delle ROW e COLUMN.
+-Danno un nome inventato tra gli spazi
+♦PROPRIETA':
+-GRID-TEMPLATE-ROWS: Indica a grid quali e quanti siano i righi da disporre al suo interno*/
+.container {
+    display: grid;
+    grid-template-columns: [col-start] 1fr [col-two] 1fr [col-three] 1fr [col-last] auto ;
+    grid-template-rows: [row-start] 1fr [body-line] 1fr [row-last] 1fr;
+    justify-items: center;/* Lavora sulla linea orizzontale */
+    align-items: center;/* Lavora sulla linea verticale */
+    column-gap: 20px; /* Spaziatura tra colonne */
+    row-gap: 15px; /* Spaziatura tra righe */
+
+}
+/* Possiamo usare le LABEL come punto di partenza degli elementi */
+header {
+    grid-column-start: col-start;/* La Colonna Parte da COL-START */
+    grid-column-end: col-last;/* La Colonna Finisce a COL-LAST */
+    grid-row: row-start;/* Disporrà il contenuto allo spazio successivo alla grid-line ROW-START*/
+}
+
+/* Disposizione altri elem nel Grid */
+article {
+    grid-column: col-start / col-three;/* Parte da start fino a three */
+    grid-row: 2;/* Sarà posizionato al 2°rigo */
+}
+
+aside {
+    grid-column-start: col-three;/* La Colonna Parte da COL-THREE */
+    grid-column-end: col-last;/* La Colonna Finisce a COL-LAST */
+    grid-row: 2;/* Sarà posizionato al 2°rigo */
+}
+
+/* Definisce quale sia la GRID-AREA occupata dal Footer 
+-GRID-AREA:*/
+footer {
+    grid-area: row-last / 1 / row-last / 4;/* Grid Line Riga di partenza / Grid Line colonna di partenza / Grid Line della Row Fine / Grid Line Colonna Finale */
+}
+
+                /* Template Areas, Gap e regole di posizionamento */
+/*
+-REPEATER: definiSCE ripetizioni di colonne
+-TEMPLEATE AREAS: per disegnare aree specifiche all'interno della griglia attraverso stringhe nominative.  */
+
+/* Questo codice crea un layout a griglia con quattro colonne e tre righe. */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ripeti x4 volte 1Spazio disponibile */
+    grid-template-rows: auto;/* Gestisce le righe occupando gli spazi necessarie */
+    grid-gap: 10px;
+    grid-template-areas:/* Possiamo Pre-Disegnare le aree tramite le stringhe */
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer";
+  /*-Per Ogni riga, Una stringa che indica lo spazio occupato 
+    -Gli spazi occupati dalle 4 colonne, creino un'area Header
+    -Se un'area si deve espandere su più colonne della riga, SI RIPETE IL NOME
+    -Possiamo usare: NAME o ". = area vuota"*/
+
+/*  ANALISI:
+    -ROW 1: 4 COLONNE ESTESE estese CON NOME HEADER 
+    -ROW 2: 2 COL MAIN + spazio vuoto + sidebar
+    -row 3: 4 CPLONNE ESTESE footer*/
+}
+
+/* Questo codice assegna uno stile agli elementi del layout. */
+header {
+    grid-area: header;   
+}
+
+article {
+    grid-area: main;    
+}
+
+aside {
+    grid-area: sidebar;   
+}
+
+footer {
+    grid-area: footer;
+}

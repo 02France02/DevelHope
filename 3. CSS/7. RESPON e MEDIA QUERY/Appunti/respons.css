@@ -1,0 +1,60 @@
+                     /* RESPONSIVITA' e MEDIA QUERY
+
+RESPONSIVITA': corretta visualizzazione dei contenuti su vari dispositivi.
+
+MEDIA QUERY: permettono di adattare il design di un sito web a diverse dimensioni di schermo e dispositivi
+-BREAK POINTS: determinano come il contenuto dovrebbe apparire a seconda della risoluzione dello schermo.
+ Da considerare, per il contenuto del sito, anche i Break Point più comuni*/
+
+
+/* con "screen" poossiamo indicare che tipo di dispositivo è, ed il Break Point per la riduzione 
+   -tutte le regole verranno applicate quando lo schermo andrà a quella somma minima*/
+@media screen and (min-width: 500px) {
+    .container {
+        display: flex;
+        font-size: 1rem;
+    }
+    .article1 {
+        flex: 1;
+        margin-right: 5;
+    }
+    .article2 {
+        flex: 2;
+    }
+}
+
+/* Con "ALL" applicheremo a tutto le regole. Le regole saranno applicate in una finestra che va da un max a
+   un min
+   ->Se indicata dopo la virgpla, rapresenta un'alternativa (applicare la regola anche dopo aver superato i 900px)*/
+@media all and (max-width: 690px) and (min-width: 520px), (min-width: 900px)  {
+    .body {
+        background-color: firebrick;
+    }
+    .h1 {
+        color: #000;
+    }
+    
+}
+/* ALTRE MEDIAQUERY
+
+-La prima media query si applica quando il dispositivo ha un’orientazione verticale.
+-La seconda media query si applica quando il dispositivo ha uno schermo a colori.
+-La terza media query si applica quando il dispositivo ha uno schermo monocromatico.
+-La quarta media query inverte il comportamento
+ Questo potrebbe corrispondere a dispositivi particolari o sperimentali.*/
+
+@media (orientation:portrait) {}
+@media (color) {}
+@media (monochrome) {}
+@media not all and (monochrome) {}
+
+/* possiamo linkare una @media da un file esterno nel HTML */
+
+/*                    I META-TAG VIEWPORT
+
+Questo tag consente ai browser, in particolare quelli mobili, di gestire correttamente la risoluzione dello schermo
+rispetto alla pagina web, assicurando che le media query vengano applicate correttamente. */
+
+/*➡️ <meta> name="viewport" content="width=device-witdh, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> ⬅️*/
+
+/* DEFINIAMO: larghezza dispositivo, zoom iniziale e zoom finale, predisporre se il contenuto sia zoomabile o no */

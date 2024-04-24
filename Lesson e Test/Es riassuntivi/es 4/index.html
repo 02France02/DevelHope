@@ -1,0 +1,32 @@
+<!-- dizionatio:
+crea un form con un input e un bottone. 
+Al click del bottone viene fatto un fetch all'url che si trova in questo link https://dictionaryapi.dev/, 
+dai dati ricevuti stampiamo in pagina all'interno di una card le informazioni sulla parola cercata, 
+in particolare la parola stessa, la fonetica, l'origine e il primo significato. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="container-Form">
+      <form>
+        <label for="input-word">
+          <input type="text" name="words" id="input-word"  placeholder="Develope">
+        </label>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="container-Card">
+    
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

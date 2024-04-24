@@ -1,0 +1,70 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1F1F1F;
+}
+/* Allineamento NavBar */
+nav div, div h2, div h3{
+    display: inline-block;
+}
+
+/* Larghezza nav */
+nav {
+    width: 100vw;
+    padding: 17px;
+    background-color: #212429;
+    border-bottom: 1px solid white;
+}
+
+/* Colori font */
+nav div h2, nav div h3 {
+    color: white;
+    position: relative;
+}
+
+
+span a {
+    color: #919395;
+    text-decoration: none;
+}
+select {
+    color: #919395;
+    background: none;
+    border: none
+}
+
+/* Bottone disabilitato */
+button[disabled] {
+    background: none;
+    border: none;
+    color: rgb(128, 128, 128);
+}
+
+/* Search */
+.search {
+    position: absolute;
+    right: 15px;
+}
+
+.search input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.search button {
+    padding: 5px;
+    background: none;
+    border: 1px solid green;
+    color: green;
+    border-radius: 5px;
+
+}
+/* Distanziamento */
+.pad  {
+    margin-left: 10px;
+}

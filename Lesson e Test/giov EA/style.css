@@ -1,0 +1,27 @@
+.container-all-cards-Flex {
+    width: 100vw;
+    & .container-all-Cards {
+        max-width: 1000px;
+    }
+}
+
+.container-menu-novita {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+}
+
+
+
+.container-all-Cards {
+
+    & .single-card {
+        width: 32%;
+        border: 1px solid black;
+    }
+}
+
+.single-card img {
+    width: 100%;
+
+}

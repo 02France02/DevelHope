@@ -1,0 +1,95 @@
+<!--                        FORM: <form>
+Essi consentono di gestire ed di inviare dei dati inseriti dall'utente, che una volta arrivati al server, possano esser gestiti.
+Esso può andare dove meglio ci aggrada, fuori o dentro il body. Al suo interno possiamo nidificare tutti gli elementi
+utili alla raccolta dati dell'user -->
+<body>
+    <!-- -ACTION: indica l'indirizzo web che accoglierà i dati
+         -METHOD: definisce il metodo http per l'invio di dati, normalmente sono "GET" e  "POST"
+         -LABEL: renderizza una casella di testo per inserire i dati, deve stare sempre con l'input
+         -INPUT: rappresenta un'etichetta di cio che dovrebbe esserci
+         -SELECT: crea una tendina con opzioni 
+         -AUTOFOCUS: ricarica la pag su quell'input
+         -DATALIST: come il select,  ma suggerisce l'elemento cercato
+         -TEXTAREA: possiamo scrivere in modo più ampio, settando anche le colonne-->
+         
+    <form action="demo.php" method="post">
+        <h1>Scheda dell'eroe</h1>                              
+        <p>I campi obbligatori sono contrassegnati da <strong> <abbr title="richiesto">*</abbr> </strong></p> <!-- ABBR: abbreviazione sottolineata dal browser -->
+        <section>
+            <h2>Eroe</h2>
+            <div>
+                <label for="name">
+                    <span>Nome: </span>
+                    <strong><abbr title="richiesto">*</abbr></strong>
+                </label>
+                <input type="text" id="hero" name="hero" autofocus required>
+            </div>
+            <div>
+                <label for="power">
+                    <span>Potere: </span>
+                    <strong><abbr title="richiesto">*</abbr></strong>
+                </label>
+                <input type="text" id="power" name="power" value="Super Forza">
+            </div>
+            <fieldset>  <!-- crea un riquadro con una scritta sul bordo, da usare con legend -->
+                <legend>title</legend>
+            </fieldset>
+
+            <select name="test" id="">
+                    <option value="">1</option>
+                <optgroup label="positivo">      <!-- rende più leggibile le opzioni -->
+                    <option value="">2</option>
+                </optgroup>
+            </select>
+
+
+            <div>
+
+                <label for="part">PEZZI</label>
+                <input type="text" id="10" name="pezzo" list="pezzi">
+
+
+                <datalist id="prezzi">
+                    <option>qualcosa</option>
+                    <option>qualc</option>
+
+                </datalist>
+                <!--  -->
+                <textarea name="space big" id="" cols="30" rows="10">Lorem ipsum dolor, sit amet consectetur adipisicing elit. </textarea>
+            </div>
+
+            <button type="submit">go</button> <!-- invio di dati al server -->
+            <button type="reset">go</button> <!-- annulla tutti valori nel form -->
+            <button type="button">go</button> <!-- adegua il comportamentoa a js -->
+
+        </section>
+    </form>
+</body>
+
+
+<!--                            ATTRIBUTI DI VALIDAZIONE 
+
+Validazione dati inseriti, con specifici limitatori:
+-REQUIRED: campo obbligatorio
+-MIN LENGTH e MAX LENGTH: valore minimo e max di caratteri da inserire
+-TYPE: anche esso lo è: se il tipo è email, il browser vorrà la @
+-PATTERN: fa rispettare le regole secondo delle espressioni regolari--->
+<div>
+    <label for="name">
+        <span>Nome: </span>
+        <strong><abbr title="richiesto">*</abbr></strong>
+    </label>
+    <input type="text" autofocus required minlength="3" maxlength="10">
+</div>
+
+<!-- Vedere PATTERN -->
+
+<!--                         SUBMIT 
+-CON IL SUBMIT, dati dal browser, arriveranno nel nostro server.  Questo avverrà con ACTION e METHOD.
+-ACTION: conterrà l'indirizzo del nostro server al quale spedire i dati
+-METHOD: definisce il metodo http per l'invio di dati, normalmente sono "GET" e  "POST"
+       ♦GET: allegherà il contenuto del nostro FORM, nell'URL del nostro SERVER.
+       ♦POST: includerà tutti i dati presenti nel FORM, nell body della chiamata dell'HTTP
+    
+                         NEL NAME, NON SI USANO GLI ACCENTI-->
+

@@ -1,0 +1,19 @@
+Descrizione dell'esercizio:
+
+-Devi creare una pagina web che mostra una lista di utenti da un API esterno e consente agli utenti di aggiungere nuovi utenti tramite un modulo.
+
+Requisiti dell'esercizio:
+
+-HTML: Crea una pagina HTML con una lista di utenti e un modulo per aggiungere nuovi utenti.
+-CSS: Applica uno stile CSS per rendere la pagina visivamente attraente.
+-JavaScript (DOM): Utilizza JavaScript per aggiungere dinamicamente gli elementi della lista degli utenti e per gestire l'evento di aggiunta di nuovi utenti.
+-JavaScript (Fetch): Usa Fetch API per recuperare i dati degli utenti da un endpoint API esterno e per inviare nuovi dati utente al server.
+
+Suggerimenti:
+
+-UTILIZZA un servizio di mock API come JSONPlaceholder (https://jsonplaceholder.typicode.com/) per simulare le richieste API.
+-CREA un semplice layout HTML con una lista di utenti e un modulo per aggiungere nuovi utenti.
+-USA CSS per stilizzare la pagina e renderla più accattivante.
+-UTILIZZA JavaScript per recuperare i dati degli utenti dall'API e visualizzarli dinamicamente nella lista degli utenti.
+-AGGIUNGI un gestore di eventi al modulo di aggiunta utente per inviare i nuovi dati utente al server utilizzando Fetch API.
+-ASSICURATI di gestire eventuali errori di rete o risposte dal server in modo adeguato nel tuo codice JavaScript.

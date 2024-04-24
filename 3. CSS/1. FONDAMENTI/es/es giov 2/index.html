@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Francesco" />
+    <meta name="description" content="Esercizi di Giovanni" />
+    <meta name="keywords" content="rules, math, quiz, quest" />
+    <link rel="favicon" href="immagine.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Inizio -->
+      <header>
+        <h3>QUIZ APP!</h3>
+        <h4>Quale essere sa volare?</h4>
+      </header>
+
+      <!-- Corpo -->
+      <main>
+        <!-- Il value assume il valore letto dal back end -->
+        <!-- Il "FOR di LABEL, comunica con "ID" di INPUT -->
+        <!-- Input nel label:  -->
+
+        <form action="pag.php" method="post">
+          <label for="Cane">
+            <input type="radio" name="val1" id="cane" value="cane" /> 
+            <span>Cane</span>
+          </label>
+
+          <label for="gatto">
+            <input type="radio" name="val1" id="gatto" value="gatto" /> 
+            <span>Gatto</span>
+          </label>
+
+          <label for="uccello">
+            <input type="radio" name="val1" id="uccello" value="uccello" />
+            <span>Uccello</span>
+          </label>
+
+          
+
+          <input
+            type="text"
+            name="casella-name"
+            id="name"
+            placeholder="Your-Name"
+          />
+          <br />
+          <div class="butt">
+            <button type="submit">Submit</button>
+          </div>
+          
+        </form>
+      </main>
+    </div>
+
+    <!-- Fine -->
+    <footer></footer>
+  </body>
+</html>

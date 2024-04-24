@@ -1,0 +1,100 @@
+/* SELETTORI DI ATTRIBUTO 
+            
+Esso consente ri affinare la ricerca del valore contenuta nello stesso attributo.*/
+
+/* Seleziona immagini che iniziano con "assets" */
+img[src^="assets"] {
+    border-radius: 10px;
+}
+
+/* Seleziona immagini che terminano con "laptop.png" */
+img[src$="laptop.png"]
+
+/* Seleziona immagini che contengono la parola "con" (separata da spazio) */
+img[alt⁓="con"]
+
+/* Seleziona immagini che contengono la parola "assets" */
+img[src*="assets"]
+
+/* Seleziona immagini che sono esattamente o iniziano con il valore "on" seguito da un trattino */
+img[src|="on"]
+
+              /* PSEUDO-ELEMENTI E PSEUDO-CLASSI
+              
+Sono strumenti che arricchiscono la capacità di selezionare e stilizzare elementi in specifici stati o parti.
+-PSEUDO-ELEMENTI: contraddistinti da due doppi punti, permettano di selezionare e stilizzare porzioni di un 
+ elemento, come la prima lettera di un testo. 
+                ♦AFTER  e BEFORE: che aggiungono contenuto prima o dopo un elemento. 
+-PSEUDO-CLASSI: identificate da un doppio punto, selezionano elementi in determinati stati, come "hover" per 
+ gli elementi al passaggio del mouse. */
+
+/* PSEUDO-ELEMENTI */
+p::first-letter {
+ color: green;
+ text-transform: capitalize; /* Maiuscolo */
+}
+p::after {
+    content: "testo dopo il p";
+    color: black;
+}
+p::before {
+    content: "testo prima dell p";
+    color: black;
+}
+
+/* PSEUDO-CLASSI */
+P:hover {
+    color: blue;
+}
+p:first-child { /* primo figlio di p */
+    color: red;
+}
+/* CONCATENAZIONE*/
+li:hover::before { /* per ogni rigo di LI, visualizzami al passaggio della freccia="x item" */
+    content: "x";
+}
+
+/*                     COMBINAZIONE SELETTORI 
+
+-DESCENDANT OPERATOR: rappresentato da uno spazio, che seleziona elementi nidificati all'interno di un altro.
+-CHILD OPERATOR: che seleziona solo gli elementi direttamente figli di un altro.
+-SIBLING SELECTORS: che selezionano elementi allo stesso livello di nidificazione, detti i fratelli. SI userà 
+ un + per averli entrambi. Solo se sono vicini, 1 dopo l'altro.*/
+ul li {
+    color: blue;
+}
+section > p {
+    text-transform: capitalize;
+}
+p + img {
+    border: 1px solid black;
+}
+p ⁓ img {  /* A differenza di prima, prenderà tutte le img che sono allo stesso livello di p */
+    color: blueviolet;
+} 
+
+
+
+                        /* BOX MODEL  
+                        
+Esso riguarda la struttura e lo spazio occupato dagli elementi all'interno di una pagina web.
+-BOX BLOCK= vengono renderizzati in una nuova linea, provano ad occupare il 100% dello spazio del genitore, ed rispettano le 
+ regole ed sono caratterizzati da margin, padding, content sizes e border. Queste regole definiscono le dimensioni.    
+-BOX INLINE= nel contenitore Block, elementi inline come span, non rispettano le regole di larghezza e altezza.
+ le regole verticali, come il padding, si sovrappongano al contenuto circostante, mentre le regole orizzontali 
+ distanziano correttamente gli elementi.
+           ♦DISPLAY: INLINE-BLOCK= permette agli elementi inline di comportarsi quasi come blocchi, rispettando le dimensioni
+            e le spaziature, ma senza andare a capo automaticamente.*/
+
+
+                        /* OVERFLOW 
+                        
+Sono contenuti che eccedono le dimensioni stabilite di un box. quando un contenuto supera le dimensioni di un box, il browser 
+di default lo fa fuoriuscire, per evitare di nascondere informazioni importanti. 
+-OVERFLOW: permette di modificare questo comportamento.
+-HIDDEN: il contenuto in eccesso viene nascosto
+-SCROLL: viene aggiunta una barra di scorrimento
+-AUTO: browser decide autonomamente se mostrare la barra di scorrimrnto.
+-VISIBLE: comportamento di default.
+
+Questo caso,  avviene quando si imposta altezza e larghezza del box,  e il p è troppo lungo.*/

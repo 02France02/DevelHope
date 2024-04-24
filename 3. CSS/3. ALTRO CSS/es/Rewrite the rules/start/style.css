@@ -1,0 +1,18 @@
+:root {
+    --color-Page: #011212;
+    --w-Ball: 100px;
+    --h-Ball: 100px;
+    --color-Ball: #ff8800;
+    --border-Ball: 50px;
+}
+
+body {
+    background-color: var(--color-Page);
+}
+
+.ball {
+    width: var(--w-Ball);
+    height: var(--h-Ball);
+    background-color: var(--color-Ball);
+    border-radius: var(--border-Ball);
+}
